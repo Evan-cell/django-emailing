@@ -12,6 +12,6 @@ def index(request):
         email = request.POST.get('email')
         send_mail(subject, message, settings.EMAIL_HOST_USER,
                   [email], fail_silently=False)
-        return render(request, 'djangomail/email_sent.html', {'email': email})
+        return render(request, 'email_sent.html', {'email': email})
 
-    return render(request, 'djangomail/index.html', {})
+    return render(request, 'index.html', {})
